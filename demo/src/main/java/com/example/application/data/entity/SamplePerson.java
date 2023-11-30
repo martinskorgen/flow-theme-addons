@@ -6,25 +6,18 @@ import java.time.LocalDate;
 
 public class SamplePerson extends AbstractEntity {
 
-    private String firstName;
-    private String lastName;
+    private String name;
     private String email;
     private String phone;
     private LocalDate dateOfBirth;
     private String occupation;
     private boolean important;
 
-    public String getFirstName() {
-        return firstName;
+    public String getName() {
+        return name;
     }
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-    public String getLastName() {
-        return lastName;
-    }
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setName(String name) {
+        this.name = name;
     }
     public String getEmail() {
         return email;
@@ -56,5 +49,4 @@ public class SamplePerson extends AbstractEntity {
     public void setImportant(boolean important) {
         this.important = important;
     }
-
 }

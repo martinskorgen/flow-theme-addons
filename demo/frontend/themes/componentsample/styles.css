@@ -1,8 +1,9 @@
-.components-view {
+html {
     background-color: var(--lumo-contrast-5pct);
+}
+
+.components-view {
     padding: var(--lumo-space-l);
-    box-sizing: border-box;
-    overflow: auto;
 }
 
 .components-view .card {
@@ -19,8 +20,12 @@
     --vaadin-field-default-width: 6em;
 }
 
+.components-view vaadin-select.state-select {
+    padding: 0;
+}
+
 @media screen and (max-width: 1200px) {
-    .components-view {
+    .components-view .view-content {
         flex-wrap: wrap;
     }
 }
