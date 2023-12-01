@@ -20,7 +20,7 @@
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <vaadin.version>24.1.10</vaadin.version>
+        <vaadin.version>24.2.5</vaadin.version>
     </properties>
 
     <dependencyManagement>
