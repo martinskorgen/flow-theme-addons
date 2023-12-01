@@ -22,3 +22,5 @@ webpack.generated.js
 /src/main/dev-bundle/
 /demo/frontend/generated/
 
+/demo/target/
+/theme/target/
