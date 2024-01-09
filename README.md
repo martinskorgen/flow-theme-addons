@@ -1,3 +1,6 @@
+![image](https://github.com/juuso-vaadin/theme-development-starter/assets/19607782/a753aad5-8f41-4290-ae02-137c51b97b24)
+
+
 # Vaadin theme development starter
 
 This project is a multi-module Vaadin + Spring Boot project. It uses Vaadin 24 and Java 17.
