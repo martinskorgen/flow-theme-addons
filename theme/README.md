@@ -1,5 +1,5 @@
 # Introduction 
-Vaadin theme for University of Oulu. Intended to be packaged and used in Vaadin 24 apps as JAR dependency.
+Vaadin theme that extends Lumo. Intended to be packaged and used in Vaadin 24 apps as JAR dependency.
 
 ## Running the application
 
