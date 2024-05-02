@@ -1,5 +1,5 @@
 # Introduction 
-Vaadin theme for University of Oulu. Intended to be packaged and used in Vaadin 24 apps as JAR dependency.
+Vaadin theme in style of StarPass demo app. Intended to be packaged and used in Vaadin 24 apps as JAR dependency.
 
 ## Running the application
 
