@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.1</version>
     <groupId>org.parttio</groupId>
     <artifactId>starpass-theme</artifactId>
     <name>StarPass theme for Vaadin</name>
@@ -35,7 +35,7 @@
         <url>https://github.com/parttio/theme-addons</url>
         <connection>scm:git:git://github.com/parttio/theme-addons.git</connection>
         <developerConnection>scm:git:ssh://git@github.com:/parttio/theme-addons.git</developerConnection>
-      <tag>HEAD</tag>
+      <tag>starpass-theme-1.0.1</tag>
   </scm>
 
     <distributionManagement>
