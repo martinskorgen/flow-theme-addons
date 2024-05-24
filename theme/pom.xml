@@ -6,6 +6,7 @@
     <artifactId>starpass-theme</artifactId>
     <name>StarPass theme for Vaadin</name>
     <description>StarPass theme package as a re-usable starting point for your own Vaadin theme.</description>
+    <url>https://github.com/parttio/theme-addons/tree/starpass</url>
     <packaging>jar</packaging>
 
     <properties>
