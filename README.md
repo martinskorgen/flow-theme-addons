@@ -33,3 +33,11 @@ The application will be accessible in http://localhost:8080.
 Changes in **theme** project are automatically loaded without need to restart the project (`vaadin.frontend.hotdeploy=true`).
 
 Note that the JAR package is only generated when `mvn install` is run.
+
+Releasing. Have ssh key registered to GH and make sure you have commit rights. Open CLI in the theme directory, then apply:
+
+    mvn release:prepare release:clean
+
+GH Action will do the actual release, build and central is typically synced within half an hour.
+
+Keep the version of the theme module in sync with the demo project (not automated currently).
