@@ -1,205 +1,274 @@
-@import "typography.css";
-@import "component-styles/badge.css";
-@import "component-styles/vaadin-accordion.css";
-@import "component-styles/vaadin-app-layout.css";
-@import "component-styles/vaadin-avatar.css";
-@import "component-styles/vaadin-button.css";
-@import "component-styles/vaadin-checkbox.css";
-@import "component-styles/vaadin-combo-box.css";
-@import "component-styles/vaadin-confirm-dialog.css";
-@import "component-styles/vaadin-context-menu.css";
-@import "component-styles/vaadin-crud.css";
-@import "component-styles/vaadin-custom-field.css";
-@import "component-styles/vaadin-date-picker.css";
-@import "component-styles/vaadin-date-time-picker.css";
-@import "component-styles/vaadin-details.css";
-@import "component-styles/vaadin-dialog.css";
-@import "component-styles/vaadin-email-field.css";
-@import "component-styles/vaadin-grid.css";
-@import "component-styles/vaadin-grid-pro.css";
-@import "component-styles/vaadin-list-box.css";
-@import "component-styles/vaadin-login-form.css";
-@import "component-styles/vaadin-menu-bar.css";
-@import "component-styles/vaadin-message-input.css";
-@import "component-styles/vaadin-message-list.css";
-@import "component-styles/vaadin-multi-select-combo-box.css";
-@import "component-styles/vaadin-notification.css";
-@import "component-styles/vaadin-number-field.css";
-@import "component-styles/vaadin-password-field.css";
-@import "component-styles/vaadin-progress-bar.css";
-@import "component-styles/vaadin-radio-button.css";
-@import "component-styles/vaadin-rich-text-editor.css";
-@import "component-styles/vaadin-scroller.css";
-@import "component-styles/vaadin-select.css";
-@import "component-styles/vaadin-tabs.css";
-@import "component-styles/vaadin-text-area.css";
-@import "component-styles/vaadin-text-field.css";
-@import "component-styles/vaadin-time-picker.css";
-@import "component-styles/vaadin-tooltip.css";
-@import "component-styles/vaadin-tree-grid.css";
-@import "component-styles/vaadin-upload.css";
+@import "./fonts/Satoshi.css";
+@import "./tokens.css";
+@import "./accordion.css";
+@import "./badge.css";
+@import "./button.css";
+@import "./checkbox.css";
+@import "./confirm-dialog.css";
+@import "./date-picker.css";
+@import "./grid.css";
+@import "./menu-bar.css";
+@import "./message-input.css";
+@import "./message-list.css";
+@import "./progress-bar.css";
+@import "./radio-button.css";
+@import "./select.css";
+@import "./side-nav.css";
+@import "./tabs.css";
+@import "./text-input.css";
 
-@font-face {
-    font-family: 'Satoshi';
-    src: url('./fonts/Satoshi-Variable.woff2') format('woff2');
-    font-weight: 300 900;
-    font-display: swap;
-    font-style: normal;
+html {
+  background: var(--bg);
+  /* background: url(bg.png), hsl(var(--base-h) var(--base-s) var(--base-l));
+  background-blend-mode: overlay;
+  background-size: cover;
+  overflow: hidden; */
 }
 
-html,
-html[theme] {
-    --primary-h: 226;
-    --primary-s: 70%;
-    --primary-l: 50%;
-    --primary: hsl(var(--primary-h) var(--primary-s) var(--primary-l));
-    --lumo-primary-color: var(--primary);
-    --lumo-primary-color-50pct: hsl(var(--primary-h) var(--primary-s) var(--primary-l) / .75);
-    --lumo-primary-color-10pct: hsl(var(--primary-h) var(--primary-s) var(--primary-l) / .13);
-    --lumo-primary-text-color: hsl(var(--primary-h) var(--primary-s) calc(var(--primary-l) - 3%));
-
-    --primary-alt: hsl(calc(var(--primary-h) - 30) var(--primary-s) var(--primary-l));
-
-    --base-l: 100%;
-    --base: hsl(0 0% var(--base-l) / 1);
-    --base-trans: hsl(0 0% var(--base-l) / .8);
-    --main-grad: linear-gradient(to bottom right, var(--base), var(--primary) 50%, var(--primary-alt) 100%);
-
-    --bg:
-            radial-gradient(83% 132% at 76% 20%, transparent 84%, var(--base-trans) 100%),
-            linear-gradient(var(--base-trans), var(--base-trans)),
-            radial-gradient(62% 100% at 25% 80%, var(--primary) 0%, transparent 100%),
-            var(--main-grad);
-
-    --blend: color-burn;
-    background-blend-mode: normal, normal, var(--blend), normal;
-    background: var(--bg);
-
-    --lumo-shade-5pct: hsla(var(--primary-h), 61%, 25%, 0.05);
-    --lumo-shade-10pct: hsla(var(--primary-h), 57%, 24%, 0.1);
-    --lumo-shade-20pct: hsla(var(--primary-h), 53%, 23%, 0.16);
-    --lumo-shade-30pct: hsla(var(--primary-h), 50%, 22%, 0.26);
-    --lumo-shade-40pct: hsla(var(--primary-h), 47%, 21%, 0.38);
-    --lumo-shade-50pct: hsla(var(--primary-h), 45%, 20%, 0.52);
-    --lumo-shade-60pct: hsla(var(--primary-h), 43%, 19%, 0.6);
-    --lumo-shade-70pct: hsla(var(--primary-h), 42%, 18%, 0.69);
-    --lumo-shade-80pct: hsla(var(--primary-h), 41%, 17%, 0.83);
-    --lumo-shade-90pct: hsla(var(--primary-h), 40%, 16%, 0.94);
-    --lumo-shade: hsl(var(--primary-h), 35%, 15%);
-
-    --lumo-font-family: Satoshi, system-ui, ui-sans-serif, sans-serif;
-
-    --vaadin-input-field-background: var(--lumo-contrast-5pct);
-    --vaadin-input-field-border-width: 1px;
-    --vaadin-input-field-border-color: var(--lumo-contrast-20pct);
-
-    --lumo-border-radius-s: 5px;
-    --lumo-border-radius-m: 7px;
-    --lumo-border-radius-l: 12px;
-
-    --lumo-icon-size-s: 16px;
-    --lumo-icon-size-m: 20px;
-    --lumo-icon-size-l: 24px;
+:focus-visible {
+  outline-color: var(--vaadin-focus-ring-color);
+  outline-width: var(--vaadin-focus-ring-width);
 }
 
-html[theme~=dark] {
-    --base-l: 0%;
-    --main-grad: linear-gradient(to bottom right, var(--primary-alt), var(--primary) 50%, var(--base) 100%);
-    --blend: color-dodge;
-    --lumo-primary-text-color: hsl(var(--primary-h) calc(var(--primary-s) + 30%) calc(var(--primary-l) + 30%));
-    --lumo-base-color: hsl(var(--primary-h) calc(var(--primary-s) / 6) 10%);
-
-    --lumo-shade-5pct: hsla(var(--primary-h), 0%, 0%, 0.07);
-    --lumo-shade-10pct: hsla(var(--primary-h), 4%, 2%, 0.15);
-    --lumo-shade-20pct: hsla(var(--primary-h), 8%, 4%, 0.23);
-    --lumo-shade-30pct: hsla(var(--primary-h), 12%, 6%, 0.32);
-    --lumo-shade-40pct: hsla(var(--primary-h), 16%, 8%, 0.41);
-    --lumo-shade-50pct: hsla(var(--primary-h), 20%, 10%, 0.5);
-    --lumo-shade-60pct: hsla(var(--primary-h), 24%, 12%, 0.6);
-    --lumo-shade-70pct: hsla(var(--primary-h), 28%, 13%, 0.7);
-    --lumo-shade-80pct: hsla(var(--primary-h), 32%, 13%, 0.8);
-    --lumo-shade-90pct: hsla(var(--primary-h), 33%, 13%, 0.9);
-    --lumo-shade: hsl(var(--primary-h), 33%, 13%);
-
-    --lumo-tint-5pct: hsla(var(--primary-h), 65%, 85%, 0.06);
-    --lumo-tint-10pct: hsla(var(--primary-h), 60%, 80%, 0.14);
-    --lumo-tint-20pct: hsla(var(--primary-h), 64%, 82%, 0.23);
-    --lumo-tint-30pct: hsla(var(--primary-h), 69%, 84%, 0.32);
-    --lumo-tint-40pct: hsla(var(--primary-h), 73%, 86%, 0.41);
-    --lumo-tint-50pct: hsla(var(--primary-h), 78%, 88%, 0.5);
-    --lumo-tint-60pct: hsla(var(--primary-h), 82%, 90%, 0.58);
-    --lumo-tint-70pct: hsla(var(--primary-h), 87%, 92%, 0.69);
-    --lumo-tint-80pct: hsla(var(--primary-h), 91%, 94%, 0.8);
-    --lumo-tint-90pct: hsla(var(--primary-h), 96%, 96%, 0.9);
-    --lumo-tint: hsl(var(--primary-h), 100%, 98%);
+/* TODO seems like a bug in Flow */
+vaadin-connection-indicator:not([offline]) {
+  pointer-events: none;
 }
 
-#outlet {
-    display: flex;
-    perspective: 1000px;;
+.v-status-message {
+  box-sizing: border-box;
 }
 
-:not(vaadin-button)::part(label) {
-    color: var(--lumo-body-text-color);
+/* TODO this is mainly intended for field labels */
+:not(vaadin-button, vaadin-menu-bar-button, vaadin-select-value-button)::part(label) {
+  color: inherit;
 }
 
-:not(vaadin-button)[focused]::part(label) {
-    color: var(--lumo-header-text-color);
+:is(h1, h2, h3, h4, h5, h6) {
+  text-wrap: balance;
 }
 
-vaadin-button {
-    font-weight: 600;
+h1 {
+  font-weight: 850;
+  line-height: var(--lumo-line-height-xl);
 }
 
-vaadin-button[theme~=primary] {
-    font-weight: 700;
+:is(h2, h3) {
+  font-weight: 800;
+  line-height: var(--lumo-line-height-l);
 }
 
-vaadin-grid {
-    background-color: transparent;
+h4 {
+  font-weight: 650;
+  line-height: var(--lumo-line-height-m);
 }
 
-vaadin-grid::part(body-cell) {
-    background-color: transparent;
-}
-vaadin-grid::part(header-cell) {
-    background-color: var(--lumo-tint-10pct);
+:is(h5, h6) {
+  font-weight: 600;
+  line-height: var(--lumo-line-height-s);
 }
 
 ::part(overlay) {
-    background: radial-gradient(circle at 25% 0%, hsl(0 0% 100% / 0.9), transparent 50%), hsl(0 0% 98% / 0.7);
-    background-origin: border-box;
-    box-shadow: inset 0 0 0 1px hsl(0 0% 100% / 0.06), 0 0 0 1px hsl(0 0% 0% / 0.06), var(--lumo-box-shadow-l);
-    -webkit-backdrop-filter: blur(8px);
-    backdrop-filter: blur(8px);
+  background: var(--view-glow), hsl(var(--base-h) var(--base-s) max(calc(var(--base-l) + 7%), 8%));
+  box-shadow: inset 0 0.5px 0 0 var(--lumo-tint-5pct), inset 0 0 0 0.5px var(--lumo-tint-10pct), 0 0 0 1px var(--lumo-shade-5pct), var(--lumo-box-shadow-l);
+  -webkit-backdrop-filter: blur(var(--blur-radius));
+  backdrop-filter: blur(var(--blur-radius));
+  font-weight: inherit;
 }
 
-[theme~=dark] ::part(overlay) {
-    background: radial-gradient(circle at 25% 0%, hsl(0 0% 100% / 0.05), transparent 50%), hsl(var(--primary-h) calc(var(--primary-s) / 5) 20% / 0.5);
-    background-origin: border-box;
+vaadin-notification-card[theme~=contrast]::part(overlay) {
+  background: var(--lumo-contrast);
 }
 
 vaadin-item::part(content),
-vaadin-menu-bar-item::part(content) {
-    display: flex;
-    align-items: center;
-    gap: var(--lumo-space-s);
-    font-weight: 500;
+vaadin-menu-bar-item::part(content),
+vaadin-context-menu-item::part(content),
+vaadin-select-item::part(content),
+vaadin-combo-box-item::part(content),
+vaadin-multi-select-combo-box-item::part(content) {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 550;
+}
+
+vaadin-menu-bar-item {
+  border-radius: var(--lumo-border-radius-s);
+}
+
+vaadin-menu-bar-item .hint {
+  color: var(--lumo-secondary-text-color);
+  margin-inline-start: auto;
+  font-weight: 450;
+  display: flex;
+  align-items: center;
+  gap: var(--lumo-space-xs);
+}
+
+vaadin-menu-bar-item.uncheckable {
+  padding-inline-start: var(--lumo-space-s);
+}
+
+vaadin-menu-bar-item.uncheckable::part(checkmark) {
+  display: none;
 }
 
 vaadin-select.minimal {
-    --vaadin-input-field-border-width: 0px;
-    --vaadin-input-field-background: transparent;
+  --vaadin-input-field-border-width: 0px;
+  --vaadin-input-field-background: transparent;
 }
 
-vaadin-drawer-toggle {
-    color: var(--lumo-tertiary-text-color);
+vaadin-menu-bar.icon-only vaadin-menu-bar-item> :not(vaadin-icon) {
+  display: none;
 }
 
-vaadin-menu-bar.icon-only vaadin-menu-bar-item > :not(vaadin-icon) {
-    display: none;
+vaadin-avatar::part(abbr) {
+  font-weight: 650;
+}
+
+vaadin-dialog-overlay::part(header),
+vaadin-dialog-overlay::part(footer) {
+  background: transparent;
+}
+
+/* :is(vaadin-select-overlay, vaadin-context-menu-overlay, vaadin-menu-bar-overlay, vaadin-combo-box-overlay, vaadin-multi-select-combo-box-overlay, vaadin-time-picker-overlay) :is([role=menuitem], [role=option]):is(:hover, [expanded]),
+vaadin-item:hover {
+  background-color: var(--lumo-contrast-10pct);
+} */
+
+vaadin-month-calendar::part(date),
+vaadin-month-calendar::part(weekday),
+vaadin-date-picker-year::part(year-number) {
+  font-weight: 480;
+}
+
+vaadin-month-calendar::part(month-header) {
+  font-size: var(--lumo-font-size-m);
+  font-weight: 600;
+}
+
+/* TODO would need a dedicated custom property to control the hover background color */
+/* vaadin-month-calendar::part(date)::before {
+  --lumo-primary-color-10pct: var(--lumo-contrast-10pct);
+} */
+
+@media (prefers-reduced-motion) {
+
+  :is([opening], [closing]),
+  :is([opening], [closing])::part(overlay) {
+    animation: none;
+  }
+
+  vaadin-dialog-overlay:is([opening], [closing]),
+  vaadin-dialog-overlay:is([opening], [closing])::part(overlay) {
+    animation: none;
+  }
+}
+
+vaadin-tooltip-overlay {
+  /* TODO should probably be the default style. Without this, tooltips close to the viewport edge can get scrollbars. */
+  inset: 0;
 }
 
 vaadin-tooltip-overlay::part(overlay) {
-    font-weight: 500;
+  font-weight: 500;
+}
+
+vaadin-icon.small {
+  width: var(--lumo-icon-size-s);
+  height: var(--lumo-icon-size-s);
+}
+
+@media (max-width: 420px), (max-height: 420px) {
+  :is(vaadin-context-menu-overlay, vaadin-menu-bar-overlay, vaadin-select-overlay)::part(overlay) {
+    max-height: 80vh;
+  }
+}
+
+vaadin-grid:not([theme~=no-border]),
+vaadin-rich-text-editor:not([theme~=no-border]) {
+  border-radius: var(--lumo-border-radius-m);
+  overflow: hidden;
+  border-color: var(--lumo-contrast-10pct);
+}
+
+vaadin-context-menu {
+  display: contents;
+}
+
+vaadin-date-time-picker vaadin-date-picker {
+  margin-inline-end: calc(var(--vaadin-input-field-border-width) * -1);
+  position: relative;
+}
+
+vaadin-date-time-picker vaadin-date-picker::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: var(--vaadin-input-field-border-width);
+  background: var(--lumo-base-color);
+  inset-inline-end: 0;
+}
+
+/* TODO tab key travels through dev-tools even though it's hidden */
+vaadin-dev-tools {
+  display: none;
+}
+
+.star-filled {
+  color: rgb(224, 190, 0) !important;
+}
+
+hr {
+  margin: 0;
+}
+
+:is(vaadin-menu-bar-overlay, vaadin-context-menu-overlay, vaadin-select-overlay) hr {
+  margin: var(--lumo-space-s) var(--lumo-space-xs);
+}
+
+a:where(:any-link) {
+  color: var(--accent-text);
+}
+
+.boxed-icon {
+  padding: var(--lumo-space-m);
+  box-sizing: content-box;
+  background-color: var(--lumo-contrast-10pct);
+  border-radius: var(--lumo-border-radius-s);
+}
+
+vaadin-notification-card[theme~=about-dialog-hint]::part(overlay) {
+  margin-inline-start: var(--lumo-size-xl);
+}
+
+nav.sidebar {
+  padding: 0 var(--lumo-space-xs);
+}
+
+nav.sidebar>header,
+nav.sidebar>header>span {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+nav.sidebar>header {
+  font-weight: 700;
+  font-size: var(--lumo-font-size-l);
+  min-height: var(--lumo-size-m);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px; /* Room for focus outlines on buttons */
+  padding-bottom: var(--lumo-space-s);
+  padding-inline-start: var(--lumo-space-s);
+  margin-top: -4px;
+  margin-inline-end: -4px;
+}
+
+nav.sidebar>vaadin-side-nav {
+  margin-bottom: var(--lumo-space-s);
 }

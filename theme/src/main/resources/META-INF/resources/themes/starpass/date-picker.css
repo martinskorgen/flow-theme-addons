@@ -1,0 +1,9 @@
+vaadin-date-picker-overlay-content,
+vaadin-date-picker-month-scroller,
+vaadin-date-picker-overlay-content::part(toolbar) {
+  background: transparent;
+}
+
+vaadin-date-picker-year-scroller {
+  background: var(--lumo-shade-10pct);
+}
