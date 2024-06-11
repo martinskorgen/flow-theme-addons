@@ -4,13 +4,13 @@ vaadin-menu-bar::part(container) {
   margin: calc(var(--vaadin-focus-ring-width, 2px) * -1 - 1px);
 }
 
-vaadin-menu-bar vaadin-menu-bar-button[aria-haspopup]::part(suffix)::after {
+vaadin-menu-bar-button[aria-haspopup]::part(suffix)::after {
   content: var(--lumo-icons-dropdown);
   font-family: lumo-icons;
   opacity: 0.7;
 }
 
-vaadin-menu-bar vaadin-menu-bar-button[aria-haspopup][theme~=icon]::part(suffix)::after {
+vaadin-menu-bar-button[aria-haspopup][theme~=icon]::part(suffix)::after {
   position: absolute;
   z-index: 1;
   bottom: 0;
@@ -18,9 +18,31 @@ vaadin-menu-bar vaadin-menu-bar-button[aria-haspopup][theme~=icon]::part(suffix)
   transition: opacity 120ms;
 }
 
-vaadin-menu-bar vaadin-menu-bar-button[theme~=icon]:not(:hover, [active])::part(suffix)::after {
+vaadin-menu-bar-button[theme~=icon]:not(:hover, [active])::part(suffix)::after {
   opacity: 0;
 }
+
+vaadin-menu-bar-item {
+  border-radius: var(--lumo-border-radius-s);
+}
+
+vaadin-menu-bar-item .hint {
+  color: var(--lumo-secondary-text-color);
+  margin-inline-start: auto;
+  font-weight: 450;
+  display: flex;
+  align-items: center;
+  gap: var(--lumo-space-xs);
+}
+
+vaadin-menu-bar-item.uncheckable {
+  padding-inline-start: var(--lumo-space-s);
+}
+
+vaadin-menu-bar-item.uncheckable::part(checkmark) {
+  display: none;
+}
+
 
 @media (pointer: fine) {
   vaadin-menu-bar-item {
