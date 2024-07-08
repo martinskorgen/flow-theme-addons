@@ -1,0 +1,25 @@
+vaadin-menu-bar vaadin-menu-bar-button::part(suffix)::after {
+  content: var(--lumo-icons-dropdown);
+  font-family: lumo-icons;
+  opacity: 0.7;
+}
+
+vaadin-menu-bar vaadin-menu-bar-button[theme~=icon]::part(suffix)::after {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  right: 0;
+  transition: opacity 120ms;
+}
+
+vaadin-menu-bar vaadin-menu-bar-button[theme~=icon]:not(:hover, [active])::part(suffix)::after {
+  opacity: 0;
+}
+
+vaadin-menu-bar-item[theme~=error] {
+  color: var(--lumo-error-text-color);
+}
+
+vaadin-menu-bar-item[theme~=error]:hover {
+  background-color: var(--lumo-error-color-10pct);
+}

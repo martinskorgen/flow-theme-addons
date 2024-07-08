@@ -1,0 +1,51 @@
+vaadin-message {
+  padding: var(--lumo-space-s) var(--lumo-space-l);
+  cursor: default;
+  gap: var(--lumo-space-m);
+}
+
+vaadin-message::part(name) {
+  font-weight: 700;
+  line-height: var(--lumo-line-height-xs);
+}
+
+vaadin-message::part(time) {
+  font-size: var(--lumo-font-size-xs);
+  line-height: var(--lumo-line-height-xs);
+}
+
+vaadin-message vaadin-avatar {
+  margin: 0;
+}
+
+vaadin-message-list.one-to-one vaadin-message::part(content) {
+  padding: var(--lumo-space-m);
+  border-radius: var(--lumo-border-radius-l);
+  background: var(--lumo-contrast-10pct);
+  max-width: 70%;
+  flex-grow: 0;
+  width: fit-content;
+  gap: var(--lumo-space-s);
+}
+
+vaadin-message-list.one-to-one vaadin-message vaadin-avatar {
+  align-self: end;
+  margin-bottom: var(--lumo-space-s);
+}
+
+vaadin-message-list.one-to-one vaadin-message::part(name) {
+  display: none;
+}
+
+vaadin-message-list.one-to-one vaadin-message::part(header) {
+  order: 1;
+  min-height: 0;
+}
+
+vaadin-message-list.one-to-one vaadin-message.me {
+  flex-direction: row-reverse;
+}
+
+vaadin-message-list.one-to-one vaadin-message.me::part(content) {
+  background: var(--accent-10pct);
+}
