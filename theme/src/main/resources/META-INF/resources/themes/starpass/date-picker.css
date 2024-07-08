@@ -1,0 +1,25 @@
+vaadin-date-picker-overlay-content,
+vaadin-date-picker-month-scroller,
+vaadin-date-picker-overlay-content::part(toolbar) {
+  background: transparent;
+}
+
+vaadin-date-picker-year-scroller {
+  background: var(--lumo-shade-10pct);
+}
+
+vaadin-month-calendar::part(date),
+vaadin-month-calendar::part(weekday),
+vaadin-date-picker-year::part(year-number) {
+  font-weight: 480;
+}
+
+vaadin-month-calendar::part(month-header) {
+  font-size: var(--lumo-font-size-m);
+  font-weight: 600;
+}
+
+/* TODO would need a dedicated custom property to control the hover background color */
+/* vaadin-month-calendar::part(date)::before {
+  --lumo-primary-color-10pct: var(--lumo-contrast-10pct);
+} */

@@ -2,6 +2,10 @@ html {
     background-color: var(--lumo-contrast-5pct);
 }
 
+#outlet {
+    overflow: auto;
+}
+
 .components-view {
     padding: var(--lumo-space-l);
 }

@@ -1,20 +1,32 @@
 @import "./fonts/Satoshi.css";
 @import "./tokens.css";
+@import "./accordion.css";
+@import "./badge.css";
 @import "./button.css";
 @import "./checkbox.css";
 @import "./confirm-dialog.css";
+@import "./date-picker.css";
 @import "./grid.css";
 @import "./menu-bar.css";
 @import "./message-input.css";
 @import "./message-list.css";
+@import "./notifications.css";
 @import "./progress-bar.css";
 @import "./radio-button.css";
+@import "./select.css";
 @import "./side-nav.css";
 @import "./tabs.css";
 @import "./text-input.css";
+@import "./typography.css";
 
 html {
   background: var(--bg);
+  background-attachment: fixed;
+  height: 100vh;
+  /* background: url(bg.png), hsl(var(--base-h) var(--base-s) var(--base-l));
+  background-blend-mode: overlay;
+  background-size: cover;
+  overflow: hidden; */
 }
 
 :focus-visible {
@@ -32,49 +44,16 @@ vaadin-connection-indicator:not([offline]) {
 }
 
 /* TODO this is mainly intended for field labels */
-:not(vaadin-button)::part(label) {
+:not(vaadin-button, vaadin-menu-bar-button, vaadin-select-value-button)::part(label) {
   color: inherit;
 }
 
-:is(h1, h2, h3, h4, h5, h6) {
-  text-wrap: balance
-}
-
-h1 {
-  font-weight: 800;
-}
-
-:is(h2, h3) {
-  font-weight: 700;
-}
-
-h4 {
-  font-weight: 650;
-}
-
-:is(h5, h6) {
-  font-weight: 600;
-}
-
 ::part(overlay) {
-  background: var(--view-glow), var(--lumo-base-color-80pct);
+  background: var(--view-glow), hsl(var(--base-h) var(--base-s) max(calc(var(--base-l) + 7%), 8%));
   box-shadow: inset 0 0.5px 0 0 var(--lumo-tint-5pct), inset 0 0 0 0.5px var(--lumo-tint-10pct), 0 0 0 1px var(--lumo-shade-5pct), var(--lumo-box-shadow-l);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(var(--blur-radius));
+  backdrop-filter: blur(var(--blur-radius));
   font-weight: inherit;
-}
-
-/* TODO partial workaround to Firefox issue where overlays get rendered behind Views */
-@supports (-moz-appearance:none) {
-
-  [opening],
-  [opening]::part(overlay) {
-    animation: none;
-  }
-}
-
-vaadin-notification-card[theme~=contrast]::part(overlay) {
-  background: var(--lumo-contrast);
 }
 
 vaadin-item::part(content),
@@ -85,42 +64,9 @@ vaadin-combo-box-item::part(content),
 vaadin-multi-select-combo-box-item::part(content) {
   display: flex;
   align-items: center;
-  gap: 0.75em;
+  gap: 0.75rem;
   font-weight: 550;
 }
-
-vaadin-menu-bar-item {
-  border-radius: var(--lumo-border-radius-s);
-}
-
-vaadin-menu-bar-item .hint {
-  color: var(--lumo-secondary-text-color);
-  margin-inline-start: auto;
-  font-weight: 450;
-  display: flex;
-  align-items: center;
-  gap: var(--lumo-space-xs);
-}
-
-vaadin-menu-bar-item.uncheckable {
-  padding-inline-start: var(--lumo-space-s);
-}
-
-vaadin-menu-bar-item.uncheckable::part(checkmark) {
-  display: none;
-}
-
-/* vaadin-select.autosize {
-  --vaadin-field-default-width: auto;
-}
-
-vaadin-select.autosize vaadin-select-value-button {
-  width: auto;
-}
-
-vaadin-select.icon-only vaadin-item > :not(vaadin-icon)  {
-  display: none;
-} */
 
 vaadin-select.minimal {
   --vaadin-input-field-border-width: 0px;
@@ -132,7 +78,7 @@ vaadin-menu-bar.icon-only vaadin-menu-bar-item> :not(vaadin-icon) {
 }
 
 vaadin-avatar::part(abbr) {
-  font-weight: 600;
+  font-weight: 650;
 }
 
 vaadin-dialog-overlay::part(header),
@@ -143,22 +89,6 @@ vaadin-dialog-overlay::part(footer) {
 /* :is(vaadin-select-overlay, vaadin-context-menu-overlay, vaadin-menu-bar-overlay, vaadin-combo-box-overlay, vaadin-multi-select-combo-box-overlay, vaadin-time-picker-overlay) :is([role=menuitem], [role=option]):is(:hover, [expanded]),
 vaadin-item:hover {
   background-color: var(--lumo-contrast-10pct);
-} */
-
-vaadin-month-calendar::part(date),
-vaadin-month-calendar::part(weekday),
-vaadin-date-picker-year::part(year-number) {
-  font-weight: 480;
-}
-
-vaadin-month-calendar::part(month-header) {
-  font-size: var(--lumo-font-size-m);
-  font-weight: 600;
-}
-
-/* TODO would need a dedicated custom property to control the hover background color */
-/* vaadin-month-calendar::part(date)::before {
-  --lumo-primary-color-10pct: var(--lumo-contrast-10pct);
 } */
 
 @media (prefers-reduced-motion) {
@@ -172,6 +102,11 @@ vaadin-month-calendar::part(month-header) {
   vaadin-dialog-overlay:is([opening], [closing])::part(overlay) {
     animation: none;
   }
+}
+
+vaadin-tooltip-overlay {
+  /* TODO should probably be the default style. Without this, tooltips close to the viewport edge can get scrollbars. */
+  inset: 0;
 }
 
 vaadin-tooltip-overlay::part(overlay) {
@@ -198,41 +133,6 @@ vaadin-rich-text-editor:not([theme~=no-border]) {
 
 vaadin-context-menu {
   display: contents;
-}
-
-[theme~=badge] {
-  font-weight: 600;
-  padding: 0.35em calc(0.35em + var(--lumo-border-radius-s) / 4);
-  font-size: var(--lumo-font-size-xs);
-}
-
-[theme~=badge][theme~=small] {
-  font-size: var(--lumo-font-size-xxs);
-}
-
-[theme~=badge][theme~=accent] {
-  background-color: var(--accent-10pct);
-  color: var(--accent-text);
-}
-
-[theme~=badge][theme~=accent][theme~=primary] {
-  background-color: var(--accent);
-  color: var(--accent-contrast);
-}
-
-[theme~=badge][theme~=dimmed] {
-  opacity: 0.6;
-}
-
-/* Empty badges (dots) are too big by default */
-[theme~='badge']:not([icon]):empty {
-  width: 0.75em;
-  height: 0.75em;
-}
-
-[theme~='badge'][theme~='small']:not([icon]):empty {
-  width: 0.5em;
-  height: 0.5em;
 }
 
 vaadin-date-time-picker vaadin-date-picker {
@@ -266,13 +166,40 @@ hr {
   margin: var(--lumo-space-s) var(--lumo-space-xs);
 }
 
-a:where(:any-link) {
-  color: var(--accent-text);
-}
-
 .boxed-icon {
   padding: var(--lumo-space-m);
   box-sizing: content-box;
   background-color: var(--lumo-contrast-10pct);
   border-radius: var(--lumo-border-radius-s);
+}
+
+nav.sidebar {
+  padding: 0 var(--lumo-space-xs);
+}
+
+nav.sidebar>header,
+nav.sidebar>header>span {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+nav.sidebar>header {
+  font-weight: 700;
+  font-size: var(--lumo-font-size-l);
+  min-height: var(--lumo-size-m);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px; /* Room for focus outlines on buttons */
+  padding-bottom: var(--lumo-space-s);
+  padding-inline-start: var(--lumo-space-s);
+  margin-top: -4px;
+  margin-inline-end: -4px;
+}
+
+nav.sidebar>vaadin-side-nav {
+  margin-bottom: var(--lumo-space-s);
 }

@@ -22,3 +22,8 @@ vaadin-grid.no-header::part(header-cell) {
 vaadin-grid.no-header[overflow~=top]::part(header-cell) {
   border-bottom-color: var(--lumo-contrast-10pct);
 }
+
+/* Missing from Lumo */
+vaadin-grid::part(body-cell)::before {
+  border-radius: inherit;
+}

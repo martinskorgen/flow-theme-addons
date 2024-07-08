@@ -1,10 +1,16 @@
 :is(vaadin-button, vaadin-menu-bar-button) {
   --vaadin-button-background: transparent;
-  --vaadin-button-border: 1px solid var(--lumo-contrast-20pct);
+  --vaadin-button-border: var(--vaadin-button-border-width) solid var(--lumo-contrast-20pct);
   --vaadin-button-padding: 0 calc(var(--_button-size) / 4 + var(--lumo-border-radius-m) / 2);
   --vaadin-button-tertiary-padding: var(--vaadin-button-padding);
   margin: 0;
   font-weight: 630;
+  box-shadow: 0 1px 1px 0 var(--lumo-shade-2pct);
+}
+
+/* TODO missing from Lumo */
+:is(vaadin-button, vaadin-menu-bar-button)::before {
+  inset: calc(var(--vaadin-button-border-width) * -1);
 }
 
 :is(vaadin-button, vaadin-menu-bar-button)::after {
@@ -28,7 +34,8 @@
 
 /* TODO seems like an issue in Lumo */
 :is(vaadin-button, vaadin-menu-bar-button)[theme*=tertiary] {
-  --vaadin-button-border: 0;
+  --vaadin-button-border-width: 0px;
+  box-shadow: none;
 }
 
 :is(vaadin-button, vaadin-menu-bar-button)[theme~=primary] {
@@ -67,6 +74,7 @@
 }
 
 :is(vaadin-button, vaadin-menu-bar-button)[theme~=tertiary-inline] {
+  padding: 0;
   cursor: pointer;
 }
 
@@ -107,4 +115,9 @@
 vaadin-menu-bar-button > vaadin-menu-bar-item {
   margin: 0;
   padding: 0;
+}
+
+vaadin-button [theme~=badge][slot$=fix] {
+  /* Fixes vertical alignment */
+  vertical-align: top;
 }
