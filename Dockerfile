@@ -11,7 +11,7 @@ FROM eclipse-temurin:17 AS BUILD
 COPY . /app/
 WORKDIR /app/
 RUN ./mvnw clean install -Pproduction
-# At this point, we have the app (executable jar file):  /app/target/my-hilla-app-1.0-SNAPSHOT.jar
+# At this point, we have the app (executable jar file):  /app/demo/target/componentsample-1.0.5-SNAPSHOT.jar
 
 # The "Run" stage. Start with a clean image, and copy over just the app itself, omitting gradle, npm and any intermediate build files.
 FROM eclipse-temurin:17
