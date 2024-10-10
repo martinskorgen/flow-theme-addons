@@ -5,7 +5,7 @@
 
     <groupId>org.vaadin.multimodule.example</groupId>
     <artifactId>vaadin-multi-module-example</artifactId>
-    <version>1.0</version>
+    <version>1.0.5-SNAPSHOT</version>
     <name>Vaadin Multi-Module Example</name>
     <packaging>pom</packaging>
 
