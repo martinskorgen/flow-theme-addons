@@ -1,7 +1,7 @@
-![image](https://github.com/juuso-vaadin/theme-development-starter/assets/19607782/a753aad5-8f41-4290-ae02-137c51b97b24)
+![starpass_theme_screenshot](https://github.com/user-attachments/assets/2d4ce1e5-61d4-4878-85fa-896de1eaa243)
 
 
-# Vaadin theme development starter
+# Starpass theme add-on
 
 This project is a multi-module Vaadin + Spring Boot project. It uses Vaadin 24 and Java 17.
 
