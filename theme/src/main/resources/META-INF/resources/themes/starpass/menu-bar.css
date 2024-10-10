@@ -43,6 +43,10 @@ vaadin-menu-bar-item.uncheckable::part(checkmark) {
   display: none;
 }
 
+vaadin-menu-bar.icon-only vaadin-menu-bar-item> :not(vaadin-icon) {
+  display: none;
+}
+
 
 @media (pointer: fine) {
   vaadin-menu-bar-item {

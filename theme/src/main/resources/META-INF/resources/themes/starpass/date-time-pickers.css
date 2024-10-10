@@ -19,7 +19,16 @@ vaadin-month-calendar::part(month-header) {
   font-weight: 600;
 }
 
-/* TODO would need a dedicated custom property to control the hover background color */
-/* vaadin-month-calendar::part(date)::before {
-  --lumo-primary-color-10pct: var(--lumo-contrast-10pct);
-} */
+vaadin-date-time-picker vaadin-date-picker {
+  margin-inline-end: calc(var(--vaadin-input-field-border-width) * -1);
+  position: relative;
+}
+
+vaadin-date-time-picker vaadin-date-picker::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: var(--vaadin-input-field-border-width);
+  background: var(--lumo-base-color);
+  inset-inline-end: 0;
+}
