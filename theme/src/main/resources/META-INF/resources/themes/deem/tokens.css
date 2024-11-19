@@ -23,7 +23,7 @@ html[theme] {
   --grad3: radial-gradient(83% 132% at 76% 20%,
       transparent 84%,
       hsl(var(--base-h) var(--base-s) calc(var(--base-l) + 10%) / 0.8) 100%);
-  --bg: var(--grad3), var(--grad2), var(--grad1), hsl(var(--base-h) var(--base-s) var(--base-l));
+  --bg: var(--lumo-shade-5pct);
 
   --lumo-base-color: hsl(var(--base-h) var(--base-s) 100%);
   --lumo-base-color-90pct: hsl(var(--base-h) var(--base-s) 100% / 0.9);
