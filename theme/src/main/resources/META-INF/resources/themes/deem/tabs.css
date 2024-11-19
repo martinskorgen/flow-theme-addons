@@ -50,7 +50,7 @@ vaadin-tab::after {
 }
 
 vaadin-tab {
-  font-weight: 600;
+  font-weight: 500;
   border-radius: var(--lumo-border-radius-s);
   transition:
     color 160ms,

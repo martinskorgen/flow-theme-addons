@@ -1,4 +1,4 @@
-@import "./fonts/Satoshi.css";
+@import "./fonts/poppins/Poppins.css";
 @import "./tokens.css";
 @import "./accordion.css";
 @import "./app-layout.css";
@@ -55,7 +55,7 @@ vaadin-multi-select-combo-box-item::part(content) {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  font-weight: 550;
+  font-weight: 400;
 }
 
 vaadin-select.minimal {

@@ -2,13 +2,13 @@
 [theme~=badge] {
   padding: var(--lumo-space-xs) calc(var(--lumo-space-xs) * 1.5);
   font-size: var(--lumo-font-size-xs);
-  font-weight: 620;
+  font-weight: 500;
   color: var(--lumo-secondary-text-color);
 }
 
 [theme~=badge][theme~=small] {
   font-size: var(--lumo-font-size-xxs);
-  font-weight: 660;
+  font-weight: 500;
 }
 
 [theme~=badge][theme~=accent] {

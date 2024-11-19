@@ -4,7 +4,7 @@
   --vaadin-button-padding: 0 calc(var(--_button-size) / 4 + var(--lumo-border-radius-m) / 2);
   --vaadin-button-tertiary-padding: var(--vaadin-button-padding);
   margin: 0;
-  font-weight: 630;
+  font-weight: 500;
   box-shadow: 0 1px 1px 0 var(--lumo-shade-2pct);
 }
 
@@ -39,7 +39,7 @@
 }
 
 :is(vaadin-button, vaadin-menu-bar-button)[theme~=primary] {
-  font-weight: 680;
+  font-weight: 500;
   min-width: initial;
   background-image: linear-gradient(170deg, hsl(0 0% 100% / 0.05), hsl(0 0% 0% / 0.05));
   background-blend-mode: overlay;

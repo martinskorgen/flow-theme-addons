@@ -76,8 +76,8 @@ html[theme] {
   --lumo-shade-90pct: hsl(var(--base-h) min(calc(var(--base-s) * 0.8), 35%) 16% / 0.98);
   --lumo-shade: hsl(var(--base-h) min(calc(var(--base-s) * 0.8), 35%) 12%);
 
-  --lumo-font-family: Satoshi, system-ui, ui-sans-serif, sans-serif;
-  font-weight: 430;
+  --lumo-font-family: Poppins, system-ui, ui-sans-serif, sans-serif;
+  font-weight: 400;
 
   --lumo-font-size-xxxl: 2rem;
   --lumo-font-size-xxl: 1.5rem;

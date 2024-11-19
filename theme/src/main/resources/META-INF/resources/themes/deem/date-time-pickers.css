@@ -11,7 +11,7 @@ vaadin-date-picker-year-scroller {
 vaadin-month-calendar::part(date),
 vaadin-month-calendar::part(weekday),
 vaadin-date-picker-year::part(year-number) {
-  font-weight: 480;
+  font-weight: 400;
 }
 
 vaadin-month-calendar::part(month-header) {
