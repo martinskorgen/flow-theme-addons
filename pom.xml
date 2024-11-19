@@ -3,10 +3,10 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.vaadin.multimodule.example</groupId>
-    <artifactId>vaadin-multi-module-example</artifactId>
-    <version>1.0.5-SNAPSHOT</version>
-    <name>Vaadin Multi-Module Example</name>
+    <groupId>no.deem.flow</groupId>
+    <artifactId>deem-flow-theme</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>Deem - Flow - UI - Theme</name>
     <packaging>pom</packaging>
 
     <modules>
