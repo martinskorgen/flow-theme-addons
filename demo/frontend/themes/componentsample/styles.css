@@ -13,7 +13,7 @@ html {
 .components-view .card {
     padding: var(--lumo-space-l);
     border-radius: var(--lumo-border-radius-l);
-    background: radial-gradient(circle at 25% 0%, hsl(0 0% 100% / 0.9), transparent 50%), hsl(0 0% 98% / 0.7);
+    background: white;
     background-origin: border-box;
     box-shadow: inset 0 0 0 1px hsl(0 0% 100% / 0.06), 0 0 0 1px hsl(0 0% 0% / 0.06);
 }

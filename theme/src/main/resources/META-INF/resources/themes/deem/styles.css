@@ -25,10 +25,6 @@ html {
   background: var(--bg);
   background-attachment: fixed;
   height: 100vh;
-  /* background: url(bg.png), hsl(var(--base-h) var(--base-s) var(--base-l));
-  background-blend-mode: overlay;
-  background-size: cover;
-  overflow: hidden; */
 }
 
 :focus-visible {
