@@ -5,7 +5,7 @@ vaadin-message {
 }
 
 vaadin-message::part(name) {
-  font-weight: 700;
+  font-weight: 600;
   line-height: var(--lumo-line-height-xs);
 }
 

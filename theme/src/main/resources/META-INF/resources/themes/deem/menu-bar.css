@@ -29,7 +29,7 @@ vaadin-menu-bar-item {
 vaadin-menu-bar-item .hint {
   color: var(--lumo-secondary-text-color);
   margin-inline-start: auto;
-  font-weight: 450;
+  font-weight: 400;
   display: flex;
   align-items: center;
   gap: var(--lumo-space-xs);
