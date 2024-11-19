@@ -1,7 +1,7 @@
 ![starpass_theme_screenshot](https://github.com/user-attachments/assets/2d4ce1e5-61d4-4878-85fa-896de1eaa243)
 
 
-# Starpass theme add-on
+# Deem theme add-on
 
 This project is a multi-module Vaadin + Spring Boot project. It uses Vaadin 24 and Java 17.
 
